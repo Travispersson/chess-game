@@ -18,4 +18,26 @@ public class Position {
     public Integer getRank() {
         return rank;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o instanceof Position) {
+            return equals((Position) o);
+        }
+
+        return false;
+    }
+
+    public boolean equals(Position pos) {
+        return (this.file == pos.getFile() && this.rank == pos.getRank());
+    }
+
+    @Override
+    public String toString() {
+        return "Position [file=" + file + ", rank=" + rank + "]";
+    }
+    
 }

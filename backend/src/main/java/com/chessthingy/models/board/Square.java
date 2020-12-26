@@ -17,7 +17,7 @@ public class Square {
     }
 
     /**
-     * empty the square => turn it to default
+     * empties the square
      */
     public void empty() {
         this.isOccupied = false;
@@ -43,6 +43,27 @@ public class Square {
 
     public boolean isOccupied() {
         return this.isOccupied;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+
+        if(o instanceof Square){
+            return equals((Square) o);
+        }
+
+        return false;
+    }
+
+    public boolean equals(Square s) {
+
+        if (this.position.equals(s.getPosition()) && this.color == s.getColor()) {
+            return true;
+        }
+        return false;
     }
 
     @Override
